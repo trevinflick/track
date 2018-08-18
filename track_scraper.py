@@ -1,3 +1,7 @@
+###
+### scrapes results from USATF website for 2017 Indoor Women's top marks
+###
+
 from urllib.request import urlopen
 
 from bs4 import BeautifulSoup
