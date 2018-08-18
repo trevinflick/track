@@ -34,7 +34,7 @@ start = timeit.default_timer()
 for runner in range(0, len(athlete_links)):
     # for each runner in the top 100, download the tables for each athlete
     page = urlopen(athlete_links[runner])
-    soup = BeautifulSoup(page)
+    soup = BeautifulSoup(page, features = "lxml")
     
     # extract the splits table
     splits_table = soup.find_all('div', {"class" : "detail-box box-splits"})
