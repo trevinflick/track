@@ -97,7 +97,7 @@ columns = ['Short', '5_TOD', '5_Diff', '5_MinMil', '5_MPH',
 
 df.drop(columns, inplace=True, axis=1)
 
-df.to_csv('Chicago_2017_Results', sep = '\t')
+df.to_csv('Chicago_2017_Results.csv', sep = '\t')
 
 
 
