@@ -84,18 +84,18 @@ df.columns = ['Name', 'Age_Group', 'Bib', 'Age', 'City', 'Place', 'Short',
               '40_TOD', '40_Time', '40_Diff', '40_MinMil', '40_MPH',
               'FIN_TOD', 'FIN_Time', 'FIN_Diff', 'FIN_MinMil', 'FIN_MPH']
 
-columns = ['Short', '5_TOD', '5_Diff', '5_MinMil', '5_MPH',
-           '10_TOD', '10_Diff', '10_MinMil', '10_MPH',
-              '15_TOD', '15_Diff', '15_MinMil', '15_MPH',
-              '20_TOD', '20_Diff', '20_MinMil', '20_MPH',
-              'HALF_TOD', 'HALF_Diff', 'HALF_MinMil', 'HALF_MPH',
-              '25_TOD', '25_Diff', '25_MinMil', '25_MPH',
-              '30_TOD', '30_Diff', '30_MinMil', '30_MPH',
-              '35_TOD', '35_Diff', '35_MinMil', '35_MPH',
-              '40_TOD', '40_Diff', '40_MinMil', '40_MPH',
-              'FIN_TOD', 'FIN_Diff', 'FIN_MinMil', 'FIN_MPH']
+# columns = ['Short', '5_TOD', '5_Diff', '5_MinMil', '5_MPH',
+#           '10_TOD', '10_Diff', '10_MinMil', '10_MPH',
+#              '15_TOD', '15_Diff', '15_MinMil', '15_MPH',
+#             '20_TOD', '20_Diff', '20_MinMil', '20_MPH',
+#              'HALF_TOD', 'HALF_Diff', 'HALF_MinMil', 'HALF_MPH',
+#              '25_TOD', '25_Diff', '25_MinMil', '25_MPH',
+#              '30_TOD', '30_Diff', '30_MinMil', '30_MPH',
+#              '35_TOD', '35_Diff', '35_MinMil', '35_MPH',
+#              '40_TOD', '40_Diff', '40_MinMil', '40_MPH',
+#              'FIN_TOD', 'FIN_Diff', 'FIN_MinMil', 'FIN_MPH']
 
-df.drop(columns, inplace=True, axis=1)
+# df.drop(columns, inplace=True, axis=1)
 
 df.to_csv('Chicago_2017_Results.csv', sep = '\t')
 
