@@ -4,6 +4,9 @@
 # library(xml2)
 # library(rvest)
 # library(dplyr)
+#
+# rupp <- runner_scrape(21185)
+#
 
 runner_scrape <- function(id) {
   url <- paste0("https://more.arrs.run/runner/", id)
