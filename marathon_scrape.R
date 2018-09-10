@@ -57,7 +57,7 @@ marathon_scrape <- function(gender = "women", year = 2018) {
 
 # Save results as a data frame --------------------------------------------
 
-  results <- as.data.frame(bind_rows(list_of_dfs))
+  results <- do.call(rbind, list_of_dfs)
   
   results <- results[ , !duplicated(colnames(results))]
   
