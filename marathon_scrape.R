@@ -2,13 +2,16 @@ library(rvest)
 library(dplyr)
 library(progress)
 
+#
+# m_half_2018 <- marathon_scrape(event = "half-marathon", gender = "men", year = 2018)
+#
 
-marathon_scrape <- function(gender = "women", year = 2018) {
+marathon_scrape <- function(event = "marathon", gender = "women", year = 2018) {
   
 
 # Grab last page number of results ----------------------------------------
 
-  url <- paste0("https://www.iaaf.org/records/toplists/road-running/marathon/outdoor/", gender, "/senior/", year, "?regionType=world&drop=regular&fiftyPercentRule=regular&page=1&bestResultsOnly=false")
+  url <- paste0("https://www.iaaf.org/records/toplists/road-running/", event, "/outdoor/", gender, "/senior/", year, "?regionType=world&drop=regular&fiftyPercentRule=regular&page=1&bestResultsOnly=false")
   
   page_one_info <- read_html(url)
   
@@ -37,7 +40,7 @@ marathon_scrape <- function(gender = "women", year = 2018) {
 # Download data -----------------------------------------------------------
 
   for (page in seq_along(pages)) {
-    url <- paste0("https://www.iaaf.org/records/toplists/road-running/marathon/outdoor/", gender, "/senior/", year, "?regionType=world&drop=regular&fiftyPercentRule=regular&page=", page, "&bestResultsOnly=false")
+    url <- paste0("https://www.iaaf.org/records/toplists/road-running/", event, "/outdoor/", gender, "/senior/", year, "?regionType=world&drop=regular&fiftyPercentRule=regular&page=", page, "&bestResultsOnly=false")
     
     pb$tick()
     
@@ -64,8 +67,7 @@ marathon_scrape <- function(gender = "women", year = 2018) {
   results[7] <- NULL
   
   results <- results %>%
-          select(Mark, Competitor, DOB, Nat, Venue, Date) %>%
-          rename(c("Mark" = "Result"))
+          select(Result = Mark, Competitor, DOB, Nat, Venue, Date)
   
   return(results)
 }
