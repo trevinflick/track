@@ -7,7 +7,15 @@ library(progress)
 #
 
 marathon_scrape <- function(event = "marathon", gender = "women", year = 2018) {
+ 
+# Check if year is available
+
+  current_year <- as.integer(format(Sys.Date(), "%Y"))
   
+  if (!(year %in% c(2001:current_year))) {
+    stop('Data is not available for that year.')
+  }
+ 
 
 # Grab last page number of results ----------------------------------------
 
